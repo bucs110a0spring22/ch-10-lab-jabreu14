@@ -26,6 +26,15 @@ class Controller:
         self.hero = hero.Hero("Conan", 50, 80, "assets/hero.png")
         self.all_sprites = pygame.sprite.Group((self.hero,) + tuple(self.enemies))
         self.state = "GAME"
+    '''
+   Displays the screen as well as the hero and enemy objects.
+    Args:
+      self[str]: instance variable
+      width[int]: width of the screen
+      height[int]: height of the screen
+    Return: 
+      None
+    '''
 
     def mainLoop(self):
         while True:
@@ -33,6 +42,13 @@ class Controller:
                 self.gameLoop()
             elif(self.state == "GAMEOVER"):
                 self.gameOver()
+    '''
+   Calls either the gameLoop function or gameOver function depending on the state of the game.
+    Args:
+      self[str]: instance variable
+    Return: 
+      None
+    '''
 
     def gameLoop(self):
         while self.state == "GAME":
@@ -62,6 +78,7 @@ class Controller:
 
             # redraw the entire screen
             self.enemies.update()
+            self.hero.update()
             self.screen.blit(self.background, (0, 0))
             if(self.hero.health == 0):
                 self.state = "GAMEOVER"
@@ -69,6 +86,13 @@ class Controller:
 
             # update the screen
             pygame.display.flip()
+    '''
+   Allows the hero to move in the appropriate direction in reponse to a key being pressed. Checks if the hero and enemy objects collide. Also updates the screen depending on the movement of the enemy and hero objects, as well as if the hero's health has been depleted.
+    Args:
+      self[str]: instance variable
+    Return: 
+      None
+    '''
 
     def gameOver(self):
         self.hero.kill()
@@ -80,3 +104,10 @@ class Controller:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     sys.exit()
+    '''
+   Displays game over and a red screen if the hero's health is depleted. It also stops the game.
+    Args:
+      self[str]: instance variable
+    Return: 
+      None
+    '''

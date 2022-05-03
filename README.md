@@ -8,20 +8,20 @@
 Replace anything surrounded by the `< >` symbols._
 
 ## SUMMARY:
- < Provide a short description of your program's functionality. No more than a couple sentences. >
+In this program, a 'hero' is able to 'fight' various enemies by walking towards them. My program allows the enemies to move randomly by either -1, 0, or 1 in the x and y direction.
 #### Unique Feature
- < Describe the unique feature you added >
+ The unique feature I added allows the enemies and the hero to appear on the opposite side of the screen if they go out of bounds. For example, if the hero or the enemies goes out of bounds on the right side of the screen, they will appear on the left side. This also applies to the top and bottom of the screen.
 
 ## GRACE DAYS
-Grace days used for this assignment: < # >
+Grace days used for this assignment: 0 
 
-Grace days remaining: < # >/5
+Grace days remaining: 5/5
 
 ## KNOWN BUGS AND INCOMPLETE PARTS:
- < What parts of the project you were not able to complete >
+None 
 
 ## REFERENCES:
- < List any outside resources used >
+None
 
 ## MISCELLANEOUS COMMENTS:
- < Anything you would like the grader to know >
+None
